@@ -73,7 +73,7 @@ jobs:
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         
     
-    - name: 自定义插件主题。
+    - name: Custom plug-in&theme 自定义插件主题。
         run: |
           cd package
           mkdir openwrt-packages
