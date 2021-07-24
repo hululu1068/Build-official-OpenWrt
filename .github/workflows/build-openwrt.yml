@@ -92,8 +92,6 @@ jobs:
    - name: Custom plug-in&theme 自定义插件主题。
       run: |
         cd package
-        # mkdir openwrt-packages
-        # cd openwrt-packages
         git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
         git clone https://github.com/kenzok8/openwrt-packages.git
           
