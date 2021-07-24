@@ -27,7 +27,7 @@ on:
 env:
   #编译哪个源码
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: openwrt-19.07
+  REPO_BRANCH: master
   
   
   FEEDS_CONF: feeds.conf.default
@@ -74,16 +74,6 @@ jobs:
     
     
     
-    - name: Custom plug-in&theme 自定义插件主题。
-      run: |
-        cd openwrt/package
-        git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
-        git clone https://github.com/kenzok8/openwrt-packages.git
-          
-          
-        df -h
-    
-    
 
     - name: Load custom feeds 加载feeds源
       run: |
@@ -115,10 +105,23 @@ jobs:
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
+    
+    
+    
+    - name: Custom plug-in&theme 自定义插件主题。
+      run: |
+        cd openwrt/package
+        git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
+        git clone https://github.com/kenzok8/openwrt-packages.git
+          
+          
+        df -h
+    
+    
     - name: Download package 下载插件包
       id: package
       run: |
-        cd openwrt/package
+        cd package
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
