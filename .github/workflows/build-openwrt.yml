@@ -26,8 +26,8 @@ on:
 # 自定义环境变量与功能
 env:
   #编译哪个源码
-  REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_BRANCH: openwrt-19.07
   
   
   FEEDS_CONF: feeds.conf.default
