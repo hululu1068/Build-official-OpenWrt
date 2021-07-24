@@ -72,6 +72,8 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     
+    
+    
     - name: Custom plug-in&theme 自定义插件主题。
       run: |
         cd openwrt/package
@@ -114,7 +116,7 @@ jobs:
         TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
     - name: Download package 下载插件包
-      id: package
+      id: openwrt/package
       run: |
         cd openwrt
         make defconfig
