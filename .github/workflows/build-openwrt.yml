@@ -71,6 +71,29 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+        
+    
+    - name: 自定义插件主题。
+        run: |
+          cd package
+          mkdir openwrt-packages
+          cd openwrt-packages
+          git clone https://github.com/openwrt-develop/luci-theme-atmaterial.git
+          git clone https://github.com/kenzok8/openwrt-packages.git
+          
+          
+          sudo mkdir -p -m 777 /mnt/openwrt/bin /mnt/openwrt/build_dir/host /mnt/openwrt/build_dir/hostpkg /mnt/openwrt/dl /mnt/openwrt/feeds /mnt/openwrt/staging_dir
+          ln -s /mnt/openwrt/bin ./bin
+          mkdir -p ./build_dir
+          ln -s -f /mnt/openwrt/build_dir/host ./build_dir/host
+          ln -s -f /mnt/openwrt/build_dir/hostpkg ./build_dir/hostpkg
+          ln -s /mnt/openwrt/dl ./dl
+          ln -s /mnt/openwrt/feeds ./feeds
+          ln -s /mnt/openwrt/staging_dir ./staging_dir
+          
+          df -h
+    
+    
 
     - name: Load custom feeds 加载feeds源
       run: |
