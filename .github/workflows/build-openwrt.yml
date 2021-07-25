@@ -61,9 +61,9 @@ jobs:
         sudo -E apt-get -qq install $(curl -fsSL git.io/depends-ubuntu-2004)
         
         # openwrt 21.02环境
-        sudo -E apt-get -qq install gcc binutils bzip2 flex python3 perl make find grep
-        sudo -E apt-get -qq install diff unzip gawk getopt
-        sudo -E apt-get -qq install subversion libz-dev libc-dev rsync which
+        sudo -E apt-get -y install gcc binutils bzip2 flex python3 perl make find grep
+        sudo -E apt-get -y install diff unzip gawk getopt
+        sudo -E apt-get -y install subversion libz-dev libc-dev rsync which
         #
         
         sudo -E apt-get -qq autoremove --purge
