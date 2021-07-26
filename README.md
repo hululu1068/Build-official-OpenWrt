@@ -1,4 +1,5 @@
 **English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
+尝试编译原版openwrt固件，大多数插件没适配，失败！！！
 
 # Actions-OpenWrt
 
