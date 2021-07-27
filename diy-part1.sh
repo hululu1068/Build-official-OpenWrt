@@ -14,11 +14,6 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-echo 'src-git luci-theme-atmaterial https://github.com/openwrt-develop/luci-theme-atmaterial' >>feeds.conf.default
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git luci-app-adguardhome https://github.com/rufengsuixing/luci-app-adguardhome' >>feeds.conf.default
-echo 'src-git luci-app-jd-dailybonus https://github.com/jerrykuku/luci-app-jd-dailybonus' >>feeds.conf.default
-
 
 
 #sed -i '$a src-git Panzy https://github.com/hululu1068/Panzy.git' feeds.conf.default
