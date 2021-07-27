@@ -71,8 +71,17 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-
-
+    
+    - name: Load custom feeds 加载feeds源
+      run: |
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        chmod +x $DIY_P1_SH
+        cd openwrt
+        $GITHUB_WORKSPACE/$DIY_P1_SH
+        
+        
+        
+    
     - name: 自定义插件主题。
       run: |
         cd package
@@ -84,15 +93,12 @@ jobs:
         git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git
 
         df -h
-
     
-
-    - name: Load custom feeds 加载feeds源
-      run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
+    
+    
+    
+        
+        
 
     - name: Update feeds 更新feeds源
       run: cd openwrt && ./scripts/feeds update -a
