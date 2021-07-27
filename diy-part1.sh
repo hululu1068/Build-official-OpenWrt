@@ -14,7 +14,7 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-sed -i '$a src-git Panzy https://github.com/hululu1068/Panzy.git' feeds.conf.default
+#sed -i '$a src-git Panzy https://github.com/hululu1068/Panzy.git' feeds.conf.default
 
 # echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
