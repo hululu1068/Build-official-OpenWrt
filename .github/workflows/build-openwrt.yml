@@ -79,10 +79,18 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
         
+
         
-        
+
+    - name: Update feeds 更新feeds源
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: Install feeds 安装feeds源
+      run: cd openwrt && ./scripts/feeds install -a
     
-    - name: 自定义插件主题。
+    
+    
+    - name: 自定义插件主题源
       run: |
         cd package
         mkdir openwrt-packages
@@ -96,17 +104,6 @@ jobs:
     
     
     
-    
-        
-        
-
-    - name: Update feeds 更新feeds源
-      run: cd openwrt && ./scripts/feeds update -a
-
-    - name: Install feeds 安装feeds源
-      run: cd openwrt && ./scripts/feeds install -a
-
-   
     
     - name: Load custom configuration 加载自定义配置
       run: |
@@ -217,11 +214,11 @@ jobs:
         retain_days: 1
         keep_minimum_runs: 3
 
-    - name: Remove old Releases 删除Releases旧版本，只保留最新的5个
+    - name: Remove old Releases 删除Releases旧版本，只保留最新的10个
       uses: dev-drprasad/delete-older-releases@v0.1.0
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       with:
-        keep_latest: 5
+        keep_latest: 10
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
