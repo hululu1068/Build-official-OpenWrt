@@ -90,7 +90,7 @@ jobs:
     
     
     
-    - name: 自定义插件主题源
+    - name: 添加自定义插件主题
       run: |
         cd package
         mkdir openwrt-packages
