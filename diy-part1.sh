@@ -14,10 +14,10 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-echo 'src-git https://github.com/openwrt-develop/luci-theme-atmaterial.git' >>feeds.conf.default
-echo 'src-git https://github.com/xiaorouji/openwrt-passwall.git' >>feeds.conf.default
-echo 'src-git https://github.com/rufengsuixing/luci-app-adguardhome.git' >>feeds.conf.default
-echo 'src-git https://github.com/jerrykuku/luci-app-jd-dailybonus.git' >>feeds.conf.default
+echo 'src-git luci-theme-atmaterial https://github.com/openwrt-develop/luci-theme-atmaterial.git' >>feeds.conf.default
+echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git' >>feeds.conf.default
+echo 'src-git adguardhome https://github.com/rufengsuixing/luci-app-adguardhome.git' >>feeds.conf.default
+echo 'src-git jd https://github.com/jerrykuku/luci-app-jd-dailybonus.git' >>feeds.conf.default
 
 
 
