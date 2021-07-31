@@ -12,6 +12,7 @@
 ## Usage
 
 - 编译官方稳定版openwrt，大多数插件没适配
+- 最好SSH配置，编译passwall需upx支持
 
 ## Tips
 
