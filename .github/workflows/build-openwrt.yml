@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: P3TERX-Build-OpenWrt
+name: Build-Official-OpenWrt
 
 on:
   repository_dispatch:
